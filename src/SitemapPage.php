@@ -12,6 +12,7 @@ use SilverStripe\Forms\TreeMultiselectField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataList;
 use SilverStripe\ORM\DB;
+use SilverStripe\ORM\ArrayList;
 
 /**
  * Class SitemapPage
@@ -90,7 +91,7 @@ class SitemapPage
      * @return string
      */
     public function getSitemap(ArrayList $set = null) {
-        if(!$set) $set = $this->getRootPages();
+        if(!$set) $set = $this->SitemapPages();
 
         if($set && count($set)) {
             $sitemap = '<ul>';
